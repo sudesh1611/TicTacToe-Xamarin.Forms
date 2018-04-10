@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tester.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="ApplicationPrimaryColor">#009587</Color>
+            <Color x:Key="ApplicationPrimaryDarkColor">#00786A</Color>
+            <Color x:Key="ApplicationTextColor">#FFFFFF</Color>
+            <Color x:Key="ApplicationSecondaryTextColor">#555555</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource ApplicationPrimaryColor}"/>
+                <Setter Property="BarTextColor" Value="{DynamicResource ApplicationTextColor}"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ApplicationPrimaryColor}"/>
+                <Setter Property="Text" Value="Button" />
+                <Setter Property="TextColor" Value="{DynamicResource ApplicationTextColor}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="160"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="RobotoSlab-Bold.ttf#Roboto Slab"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="DefaultPrimaryLabel"  TargetType="Label">
+                <Setter Property="Text" Value="Primary Text" />
+                <Setter Property="TextColor" Value="{DynamicResource ApplicationPrimaryColor}"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="RobotoSlab-Bold.ttf#Roboto Slab"/>
+            </Style>
+            <Style x:Key="DefaultSecondaryLabel"  TargetType="Label">
+                <Setter Property="Text" Value="Secondary Text" />
+                <Setter Property="TextColor" Value="{DynamicResource ApplicationSecondaryTextColor}"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+                <Setter Property="FontFamily" Value="RobotoSlab-Regular.ttf#Roboto Slab"/>
+            </Style>
+        </ResourceDictionary>
+
+	</Application.Resources>
+</Application>

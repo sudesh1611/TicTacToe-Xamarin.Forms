@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tester"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="Tester.MainPage"
+             BackgroundColor="White"
+             Title="Color Scheme"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ColoredCircle" TargetType="controls:CircleImage">
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="BorderColor" Value="#FFFFFF"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+        <!--<Button Margin="0,20,0,0"/>
+        <Label Margin="0,20,0,0" Style="{StaticResource DefaultPrimaryLabel}"/>-->
+        <Label Text="Tap Tap Tap" Margin="0,20,0,0" Style="{StaticResource DefaultPrimaryLabel}"/>
+        <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource ApplicationPrimaryColor}" Margin="0,20,0,0"/>
+        <StackLayout Orientation="Horizontal" Spacing="20" BackgroundColor="{DynamicResource ApplicationPrimaryDarkColor}" Padding="0,20,0,10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <controls:CircleImage FillColor="#FE5622" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"
+                            />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#2195F2" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"
+                            />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#009587" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#F34236" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#E81E62" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#CCDB39" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+            </StackLayout>
+
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Spacing="20" BackgroundColor="{DynamicResource ApplicationPrimaryDarkColor}" Padding="0,0,0,20" HorizontalOptions="FillAndExpand" Margin="0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <controls:CircleImage FillColor="#9B27AF" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#663AB6" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#3E50B4" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#4BAE4F" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#5F7C8A" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <controls:CircleImage FillColor="#111111" Style="{StaticResource ColoredCircle}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+            </StackLayout>
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title=""
+             BackgroundColor="White"
+             x:Class="Tester.SignUp">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid BackgroundColor="White" HorizontalOptions="CenterAndExpand" x:Name="MainGrid" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0" Margin="0,20,0,0">
+                    <Label  Text="TicTacToe" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="40" x:Name="mainLabel"/>
+                    <Label  Text="Sign Up" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="Medium" Margin="0" TranslationY="-5"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Center">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="0">
+                        <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Name: (Max Length: 15)" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15" HorizontalOptions="Start"/>
+                        <Entry BackgroundColor="White" HorizontalTextAlignment="Start" HorizontalOptions="Start" Keyboard="Chat" x:Name="nameEntry" Completed="nameEntry_Completed" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="18" WidthRequest="210" TranslationY="-1" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"></Entry>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="0">
+                        <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Username: (Max Length: 15)" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15" HorizontalOptions="Start"/>
+                        <Entry BackgroundColor="White" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" x:Name="userNameEntry" Completed="userNameEntry_Completed" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="18" WidthRequest="210" TranslationY="-1" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"></Entry>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="0">
+                        <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Email ID:" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15" HorizontalOptions="Start"/>
+                        <Entry BackgroundColor="White" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" x:Name="emailEntry" Completed="emailEntry_Completed" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="18" WidthRequest="210" TranslationY="-1" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"></Entry>
+                        <Label IsVisible="False" Style="{StaticResource DefaultSecondaryLabel}" Text="" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="12" x:Name="emailError" TextColor="Red"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="0">
+                        <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Password: (Max Length: 15)" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15" HorizontalOptions="Start"/>
+                        <Entry BackgroundColor="White" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" IsPassword="True" x:Name="passwordEntry" Completed="passwordEntry_Completed" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="18" WidthRequest="210" TranslationY="-1" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"></Entry>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="0">
+                        <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Confirm Password:" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15" HorizontalOptions="Start"/>
+                        <Entry BackgroundColor="White" HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" IsPassword="True" x:Name="confirmPasswordEntry" Completed="confirmPasswordEntry_Completed" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="18" WidthRequest="210" TranslationY="-1" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"></Entry>
+                        <Label IsVisible="False" Style="{StaticResource DefaultSecondaryLabel}" Text="" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="12" x:Name="confirmPasswordError" TextColor="Red"/>
+                    </StackLayout>
+                    <Button Text="Sign Up" x:Name="signUpButton" Clicked="signUpButton_Clicked" WidthRequest="120" HorizontalOptions="Start"/>
+                    <Label IsVisible="False" Style="{StaticResource DefaultSecondaryLabel}" Text="" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="12" x:Name="mainError" TextColor="Red"/>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="Already have an account?" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="15"/>
+                    <Button Text="Log In" x:Name="loginButton" Clicked="loginButton_Clicked" WidthRequest="90" HeightRequest="40" FontSize="15" BackgroundColor="White" TextColor="{DynamicResource ApplicationPrimaryColor}"/>
+                </StackLayout>
+            </Grid>
+
+            <ContentView x:Name="overlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#DDFFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="{DynamicResource ApplicationPrimaryColor}" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Signing Up..." TranslationY="25" Style="{StaticResource DefaultPrimaryLabel}" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

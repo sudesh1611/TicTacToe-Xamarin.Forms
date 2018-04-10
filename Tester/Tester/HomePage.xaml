@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Tester"
+             Title="TicTacToe"
+             BarBackgroundColor="{DynamicResource ApplicationPrimaryColor}"
+             BarTextColor="{DynamicResource ApplicationTextColor}"
+             x:Class="Tester.HomePage">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Name="Audio" Clicked="Audio_Clicked"  Order="Primary" Priority="0"/>
+        <ToolbarItem Name="Setting" Clicked="Setting_Clicked" Order="Primary" Icon="ic_settings_white_36dp.png" Priority="0"/>
+    </TabbedPage.ToolbarItems>
+    <pages:SinglePlayer/>
+    <pages:MultiPlayerOffline/>
+    <pages:MultiPlayerOnline />
+    <pages:Stats/>
+</TabbedPage>

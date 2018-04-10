@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Icon="ic_person_white_36dp.png"
+             BackgroundColor="White"
+             x:Class="Tester.SinglePlayer">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Single Player" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="35" Margin="0,30,0,0" x:Name="mainLabel"/>
+        <Label Grid.Row="1" Grid.Column="0" Text="Play Against our Bot" Style="{DynamicResource DefaultSecondaryLabel}" FontSize="Small" Margin="0"/>
+        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" TranslationY="15">
+            <Label Text="Statistics" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="20"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand"  TranslationY="1">
+                    <Label Text="Easy: " Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="Bold" TranslationX="-1"/>
+                    <Label Text="20W" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="easyWins"/>
+                    <Label Text="50L" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="easyLoses"/>
+                    <Label Text="60T" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="easyTies"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand"  TranslationY="-1">
+                    <Label Text="Hard: " Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="Bold" TranslationX="-1"/>
+                    <Label Text="20W" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="hardWins"/>
+                    <Label Text="50L" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="hardLoses"/>
+                    <Label Text="60T" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="hardTies"/>
+                </StackLayout>
+                
+            </StackLayout>
+
+        </StackLayout>
+        <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Vertical" Spacing="0" VerticalOptions="CenterAndExpand" Margin="0,20,0,0">
+            <Label Text="Mode" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="20"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Easy" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None"/>
+                <Switch x:Name="modeSwitch"></Switch>
+                <Label Text="Hard" Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None"/>
+            </StackLayout>
+
+        </StackLayout>
+
+        <Button Grid.Row="4" Grid.Column="0" Text="Let's Begin" Clicked="StartGame_Clicked" x:Name="beginButton"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Icon="ic_mood_white_36dp.png"
+             BackgroundColor="White"
+             x:Class="Tester.Stats">
+    <AbsoluteLayout>
+
+
+
+        <Grid BackgroundColor="White" x:Name="MainGrid" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <Label  Style="{StaticResource DefaultPrimaryLabel}" Text="Game Statistics" TextColor="{DynamicResource ApplicationPrimaryColor}" FontAttributes="Bold" FontSize="30"/>
+                <StackLayout Orientation="Vertical"  Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="singlePlayerEasyStats"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Hard" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="singlePlayerHardStats"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="MultiPlayer" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="multiPlayerStats"/>
+                    <Label IsVisible="False" Style="{StaticResource DefaultSecondaryLabel}" Text="" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="12" x:Name="mainError" TextColor="Red"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Grid.Column="0" Grid.Row="1" Text="Log Out" x:Name="LogOutButton" WidthRequest="150" Clicked="LogOutButton_Clicked"  BackgroundColor="White" TextColor="{DynamicResource ApplicationPrimaryColor}"/>
+            <Button Grid.Column="0" Grid.Row="2" Text="DeActivate" x:Name="DeactivateButton" WidthRequest="150" Clicked="DeactivateButton_Clicked"  BackgroundColor="White" TextColor="{DynamicResource ApplicationPrimaryColor}"/>
+        </Grid>
+
+        <ContentView x:Name="overlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#EEFFFFFF">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Entry x:Name="PasswordEntry" Placeholder="Confirm Password" IsVisible="False" Completed="PasswordEntry_Completed"/>
+                <ActivityIndicator  Scale="2" Color="{DynamicResource ApplicationPrimaryColor}" IsRunning="True" x:Name="LoadingIndicator"/>
+                <Label Text="Logging Out..." TranslationY="25" Style="{StaticResource DefaultPrimaryLabel}" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20"/>
+                <Button IsVisible="False"  Text="Cancel" HorizontalOptions="FillAndExpand" x:Name="Cancel" Clicked="Cancel_Clicked"/>
+            </StackLayout>
+
+        </ContentView>
+    </AbsoluteLayout>
+</ContentPage>

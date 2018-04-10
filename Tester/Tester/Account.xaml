@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Account"
+             x:Class="Tester.Account">
+    <AbsoluteLayout>
+
+
+
+        <Grid BackgroundColor="White" x:Name="MainGrid" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="0" Padding="0,20,0,0">
+                <Label  Style="{StaticResource DefaultPrimaryLabel}" Text="Log In" FontAttributes="Bold" FontSize="40" x:Name="fullName"/>
+                <Label  Style="{StaticResource DefaultSecondaryLabel}" Text="Log In" FontAttributes="Bold" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="18" x:Name="userNameEmail" TextColor="Gray" TranslationY="-10" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <Label  Style="{StaticResource DefaultPrimaryLabel}" Text="Game Statistics" TextColor="Black" FontAttributes="Bold" FontSize="30"/>
+                <StackLayout Orientation="Vertical"  Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="singlePlayerEasyStats"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Hard" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="singlePlayerHardStats"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0,10,0,10">
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="MultiPlayer" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20" TextColor="Gray"/>
+                    <Label Style="{StaticResource DefaultSecondaryLabel}" Text="SinglePlayer - Easy" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20" TextColor="Gray" x:Name="multiPlayerStats"/>
+                    <Label IsVisible="False" Style="{StaticResource DefaultSecondaryLabel}" Text="" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="12" x:Name="mainError" TextColor="Red"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Grid.Column="0" Grid.Row="2" Text="Log Out" x:Name="LogoutButton" WidthRequest="150" Clicked="DeActivateButton_Clicked" BackgroundColor="White" TextColor="Gray"/>
+        </Grid>
+
+        <ContentView x:Name="overlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#DDFFFFFF">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator  Scale="2" Color="{DynamicResource ApplicationPrimaryColor}" IsRunning="True" x:Name="LoadingIndicator"/>
+                <Label Text="Logging Out..." TranslationY="25" Style="{StaticResource DefaultPrimaryLabel}" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" FontSize="20"/>
+            </StackLayout>
+
+        </ContentView>
+    </AbsoluteLayout>
+
+</ContentPage>

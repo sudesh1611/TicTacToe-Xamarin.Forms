@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Single Player | Easy"
+             xmlns:local="clr-namespace:Tester"
+             BackgroundColor="White"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="Tester.PlaySingleEasy">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="skia:SKCanvasView">
+                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="White" HorizontalOptions="CenterAndExpand" x:Name="MainGrid">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="{x:Static local:PlaySingleEasy.PageHeight}"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:Static local:PlaySingleEasy.PageHeight}"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="PlayingGrid" Margin="0,10" BackgroundColor="{DynamicResource ApplicationPrimaryColor}" ColumnSpacing="7" RowSpacing="7" Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <skia:SKCanvasView Grid.Row="0" Grid.Column="0" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="a" StyleId="00">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView Grid.Row="0" Grid.Column="1" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="b" StyleId="01">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="0" Grid.Column="2" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="c" StyleId="02">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="1" Grid.Column="0" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="d" StyleId="10">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="1" Grid.Column="1" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="e" StyleId="11">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="1" Grid.Column="2" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="f" StyleId="12">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="2" Grid.Column="0" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="g" StyleId="20">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="2" Grid.Column="1" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="h" StyleId="21">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+            <skia:SKCanvasView  Grid.Row="2" Grid.Column="2" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="i" StyleId="22">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,15" x:Name="ScoreGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <skia:SKCanvasView  Grid.Row="0" Grid.Column="0" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="j" StyleId="98">
+                </skia:SKCanvasView>
+                <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand" Spacing="0">
+
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding PlayerName}" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
+                    <Label Grid.ColumnSpan="2" Style="{StaticResource DefaultPrimaryLabel}" Text="Vs" FontAttributes="Italic" FontSize="Medium"/>
+                    <Label Grid.Column="1" Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding OpponentName}" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <skia:SKCanvasView  Grid.Row="0" Grid.Column="2" PaintSurface="OnCanvasViewPaintSurfaceAsync" x:Name="k" StyleId="99">
+                </skia:SKCanvasView>
+            </Grid>
+
+
+            <Grid Grid.Row="1" Grid.Column="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding PlayerName}" Margin="5,0,0,0" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="W:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding PlayerWins}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="L:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding PlayerLoses}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="T:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding PlayerTies}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding OpponentName}" Margin="5,0,0,0" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="W:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding OpponentWins}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="L:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding OpponentLoses}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="T:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Style="{StaticResource DefaultPrimaryLabel}" Text="{Binding OpponentTies}" FontSize="Small" FontAttributes="Italic"/>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="3" Grid.Column="0" x:Name="TurnButtonLayout">
+                <Button IsVisible="{Binding IsPlayerTurn}" Text="Your Turn" HorizontalOptions="FillAndExpand"/>
+                <Button IsVisible="{Binding IsOpponentTurn}" Text="Alice's Turn" IsEnabled="False" HorizontalOptions="FillAndExpand" x:Name="OpponentNameLabel"/>
+                <Button IsVisible="{Binding IsGameOver}" Text="Reset" HorizontalOptions="FillAndExpand" Clicked="Reset_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

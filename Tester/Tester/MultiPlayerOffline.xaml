@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Icon="ic_people_white_36dp.png"
+             BackgroundColor="White"
+             x:Class="Tester.MultiPlayerOffline">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Two Players" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="35" Margin="0,30,0,0" x:Name="mainLabel"/>
+        <Label Grid.Row="1" Grid.Column="0" Text="Play Offline With Others" Style="{DynamicResource DefaultSecondaryLabel}" FontSize="Small" Margin="0"/>
+        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Spacing="0" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" TranslationY="15">
+            <Label Text="Players: " Style="{DynamicResource DefaultPrimaryLabel}" FontSize="20"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" TranslationY="1">
+                <Entry HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" x:Name="player1Entry" BackgroundColor="White" TextColor="{DynamicResource ApplicationSecondaryTextColor}" FontSize="Medium" WidthRequest="150" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" Focused="player1Entry_Focused" Completed="player1Entry_Completed" Text="Player 1"></Entry>
+                <Entry HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand" Keyboard="Chat" x:Name="player2Entry" BackgroundColor="White" TextColor="{DynamicResource ApplicationSecondaryTextColor}" TranslationY="-5" FontSize="Medium" WidthRequest="150" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" Focused="player2Entry_Focused" Completed="player2Entry_Completed" Text="Player 2"></Entry>
+            </StackLayout>
+
+        </StackLayout>
+        <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Vertical" Spacing="0" VerticalOptions="CenterAndExpand" Margin="0,20,0,0">
+            <Label Text="First Turn" Style="{DynamicResource DefaultPrimaryLabel}" FontSize="20"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" TranslationY="5">
+                <Label Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="player1Label" Text="Player 1">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                     Binding="{Binding Source={x:Reference player1Entry},Path=Text}"
+                                     >
+                            
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>   
+                <Switch x:Name="modeSwitch" ></Switch>
+                <Label Style="{DynamicResource DefaultSecondaryLabel}" FontAttributes="None" x:Name="Player2Label" Text="Player 2">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                     Binding="{Binding Source={x:Reference player2Entry},Path=Text}"
+                                     >
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+
+        <Button Grid.Row="4" Grid.Column="0" Text="Let's Begin" Clicked="StartGame_Clicked" x:Name="beginButton"/>
+    </Grid>
+</ContentPage>
